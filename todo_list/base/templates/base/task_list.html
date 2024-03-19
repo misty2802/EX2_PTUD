@@ -1,0 +1,46 @@
+{% extends 'base/main.html' %}
+{% block content %}
+
+<div class='header-bar'>
+    <div>
+        <h1>Hello {{request.user|title}}</h1>
+        <h3 style = "margin:0">You have <i>{{count}}</i> incomplete task {{ count|pluralize:"s" }} </h3>
+    </div>
+    
+</div>
+
+
+<div class="table-container">
+    <table class="task-table">
+        <thead>
+            <tr>
+                <th>
+                    <div id="add-wrapper">
+                    {% if tasks|length >= 0 %}
+                    <a id="add-link" href="{% url 'task-create' %}"> ADD TASK</a>
+                    {% endif %}
+                    </div>
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for task in tasks %}
+            <tr>
+                <td>
+                    <a href="{% url 'task' task.id %}" class="view-btn">{{ task.title }}</a>
+                    </td>
+                <td class="actions">
+                    <a href="{% url 'task-update' task.id %}" class="edit-btn">Edit</a>
+                    <a href="{% url 'task-delete' task.id %}" class="delete-btn">Delete</a>
+                </td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="2" class="no-items">No items in list</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock content %}

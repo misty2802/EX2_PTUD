@@ -1,0 +1,189 @@
+<<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>To do Items</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet"
+    />
+    <style>
+        body {
+        background-color: #FFFFFF;
+        font-family: "Roboto", sans-serif;
+        padding-top: 50px
+        }
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6,
+            {
+            font-family: 'Raleway', sans-serif;
+        }
+        
+        a {
+            font-weight: 600;
+        }
+
+        .container {
+            max-width: 650px;
+            margin: auto;
+            background-color: #f2f2f2; /* Màu nền nhẹ nhàng */
+            border-radius: 10px; /* Bo tròn góc */
+            padding: 7px; /* Thêm padding cho phần nội dung */
+            -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1); /* Đổ bóng nhẹ */
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+        }
+
+    
+        .header-bar {
+            display: flex;
+            justify-content: space-between;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px 5px 0 0;
+            background: linear-gradient(90deg, #6C5B7B 0%, #C06C84 40%, #F67280 100%);
+        } 
+        .header-bar a {
+            color: rgb(247, 247, 247);
+            text-decoration: none;
+        }
+        .header-bar a:hover{
+            text-decoration: underline;
+        }
+        .task-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        
+        #add-wrapper {
+            background-color: #FFF; /* Màu nền của ô */
+            padding: 10px; /* Đặt độ dày của khoảng trắng xung quanh nội dung */
+            border: 1px solid #dddddd;
+        }
+        
+        #add-link {
+            color: #EB796F; /* Màu chữ của liên kết */
+            text-decoration: none; /* Loại bỏ gạch chân */
+        
+        }
+        #add-wrapper:hover {
+            background-color: #0056b3;
+        }
+        .task-table td {
+            border: 1px solid #dddddd;
+            padding: 10px;
+            text-align: center;
+            position: relative;
+        }
+        
+        /* Thêm margin-right cho td */
+        .task-table td {
+            margin-right: 50px;
+        }
+        .table-container {
+            margin-bottom: 40px;
+        }
+        /* Thêm kiểu cho nút điều hướng */
+
+
+        .view-btn{
+            color: #000011;
+            text-decoration: none;
+        }
+        .edit-btn, .delete-btn {
+            text-decoration: none;
+            color: #fff;
+            padding: 5px 10
+            border-radius: 5px;
+            margin-right: 5px;
+        }
+        .view-btn:hover{
+            text-decoration: underline;
+        }
+        .edit-btn:hover, .delete-btn:hover{
+            background-color: #0056b3;
+        }
+/* Thêm kiểu cho thông báo khi không có mục nào trong danh sách */
+        .no-items {
+            text-align: center;
+            font-style: italic;
+            color: #999999;
+        }
+        .actions a{
+            border: 1px solid #757575;
+            background-color: #FFF;
+            color: #EB796F;
+            padding: 10px;
+            font-size: 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        
+        h3 {
+            margin-top: 10px; 
+        }
+        .task-item{
+            font-size: 18px;
+            margin-left : 15px;
+            margin-bottom : 15px;
+        }
+        .button {
+            border: 1px solid #757575;
+            background-color: #FFF;
+            color: #EB796F;
+            padding: 10px;
+            font-size: 14px;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            margin-left: 260px;
+            margin-top: 15px;
+        }
+        .button:hover {
+            text-decoration: underline; /* Loại bỏ gạch chân khi liên kết được nhấp vào */
+        }
+        .card-body {
+            padding: 20px;
+        }
+        
+       
+        .task-form {
+            max-width: 400px;
+            margin: auto;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        .form-group label {
+            display: block;
+            font-weight: bold;
+        }
+       
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+      
+    </style>
+</head>
+<body>
+    <div class="container">{% block content%} {% endblock content%}</div>
+
+    <script src="" async defer></script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+{% extends 'base/main.html' %}
+{% block content %}
+
+
+<div class="header-bar">
+    <a href="{% url 'tasks' %}">&#8592; Go Back</a>
+</div>
+
+<div class="task-item">
+    <h1> {{task}}</h1>
+    {% if task.complete %}
+    <p>Status: Complete</p>
+    {% else %}
+    <p>Status: Incomplete</p>
+    {% endif %}
+    <p>Created date: {{task.created}}</p>
+
+
+</div>
+<hr>
+{% endblock content %}

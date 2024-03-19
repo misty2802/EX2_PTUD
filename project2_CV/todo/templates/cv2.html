@@ -1,0 +1,68 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static '\style2.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+</head>
+
+<body>
+    <div >
+        <a href="{% url 'home' %}">&#8592; Go Back</a>
+    </div>
+    <div class="container">
+        
+        <div class="avatar">
+        </div>
+        <div class="name">
+            <h1>{{candidate.name}}</h1>
+            <div class="specialize">{{candidate.position}}</div>
+            <ul class="contact">
+                <li>
+                    <span>P</span>{{candidate.phone}}
+                </li>
+                <li>
+                    <span>E</span> {{candidate.email}}
+                </li>
+                <li>
+                    <span>A</span>{{candidate.locality}}
+                </li>
+            </ul>
+        </div>
+        <div class="info">
+            <h2>PROFILE</h2>
+            <ul>
+                {{candidate.profile}}
+            </ul>
+        </div>
+        <div class="experience">
+            <h2>EXPERIENCE</h2>
+
+            <div class="item">
+                {{candidate.experience}}
+            </div>
+            <h2 class="skills">
+                SKILLS
+            </h2>
+            <ul>
+                {{candidate.profession_skills}}
+            </ul>
+
+        </div>
+        
+
+
+
+
+        </div>
+    </div>
+
+</body>
+
+</html>
